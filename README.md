@@ -3,11 +3,8 @@
 ### A Full responsive Marketing website
 
 ### Technologies
-
-`
-
 - HTML
 - CSS
 - SASS
 - Animation
-  `
+
