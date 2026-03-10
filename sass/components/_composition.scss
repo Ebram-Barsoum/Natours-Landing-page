@@ -1,0 +1,42 @@
+.composition {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    &__photo {
+        max-width: 45%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 8px;
+        transition: .3s;
+
+        &--p1{
+            z-index: 10;
+        }
+
+        &--p2 {
+            z-index: 11;
+        }
+
+        &--p3 {
+            z-index: 12;
+
+            transform: translate(50%, -80%);
+
+            &:hover{
+                z-index: 15;
+                outline: .8rem solid $color-primary-dark;
+                outline-offset: .5rem;
+                transform:translate(50%, -80%) scale(1.05) translateY(-.5rem);
+            }
+        }
+
+        &:not(:last-child):hover{
+            z-index: 15;
+            outline: .8rem solid $color-primary-dark;
+            outline-offset: .5rem;
+            transform: scale(1.05) translateY(-.5rem);
+          }
+    }
+}
+
+

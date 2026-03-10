@@ -1,0 +1,39 @@
+.grid {
+    [class^="row-"] {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    [class^="col-"]{
+        float:left;
+        padding: .6rem;
+       
+        
+        &:not(:last-child) {
+            margin-right: $space-x;
+        }
+        margin-bottom: $space-x;
+    } 
+
+    .row-1{ 
+        > div {
+              width: calc(calc(100% - #{$space-x}) / 2);
+            }
+        } 
+
+    .row-2{
+       > div{
+            width: calc(calc(100% - (2 * #{$space-x})) / 3);
+        }
+    }
+
+    .row-4{
+        > div{
+            width: calc(calc(100% - (3 * #{$space-x})) / 4);
+        }
+    }
+}
+
+
+
+

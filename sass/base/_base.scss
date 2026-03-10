@@ -1,0 +1,28 @@
+
+*,
+*::after,
+*::after {
+    margin: 0px;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+::selection {
+    background-color: $color-primary-dark;
+    color: $color-white;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 12px;
+    }
+
+    body{
+        padding:0 !important;
+    }
+}

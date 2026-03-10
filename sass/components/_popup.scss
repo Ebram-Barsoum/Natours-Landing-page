@@ -1,0 +1,117 @@
+.popup{
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    background-color: rgba($color-black,.4);
+    
+    display: grid;
+    place-items: center; 
+
+    transition: .3s;
+    opacity: 0;
+    visibility: hidden;
+    
+    &__container{
+        display: flex;
+        background-color: $color-white;
+
+        width: 85%;
+
+        @media(max-width: 1200px){
+            flex-direction: column;
+        }
+
+        @media(max-width: 992px){
+            width: 100%;
+        }
+
+    }
+    
+    &__images{
+        width: 30%;
+
+        img{
+            max-width: 100%;
+            display: block;
+            height: 50%;
+
+            
+            @media(max-width: 1200px){
+                width: 50%;
+                height: auto;
+            }
+        }
+
+        @media(max-width: 1200px){
+           width: 100%;
+
+           display: flex;
+        }
+    }
+
+    &__content{
+        width: 70%;
+        padding:1.5rem 2rem;  
+ 
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+       
+         label.btn{
+            margin: 0; 
+         }
+
+         .heading-secondary:hover{
+            transform: scale(1.1) skewX(16deg) rotate(1deg) translateX(2rem); 
+         } 
+ 
+         @media(max-width: 1200px){
+            width: 100%;
+         }
+    }
+
+    &__close{
+        display: block;
+        font-size: 2rem; 
+
+        width: fit-content;
+        margin-left: auto;
+ 
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover{
+            color:$color-primary-light;
+        }
+    }
+
+    &__text{
+        display: flex; 
+        gap:2rem;
+        
+        p{
+            font-size: .9rem; 
+        }
+        
+        @media(max-width: 768px){
+            flex-direction: column;
+         }
+    }
+
+    &:has(.popup__toggler:checked){
+        visibility: visible;
+        opacity: 1; 
+    }
+   
+
+    @media(max-width:768px){
+        padding: 2rem;
+    }
+} 

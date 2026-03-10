@@ -1,0 +1,144 @@
+.card{
+    perspective: 120rem;
+    height: 32rem;
+
+    position: relative;
+
+    &__side{
+        width: 100%;
+        height: 100%;
+
+        border-radius: 5px;
+        overflow: hidden;
+
+        position: absolute;
+        left: 0;
+        top:0;
+        
+        transition: 1s ease;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .1);
+
+        backface-visibility: hidden;
+
+        &--front{
+          background-color: $color-white;
+        }
+        
+        &--back{
+            transform: rotateY(180deg);
+            
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+
+            &-2{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+
+        } 
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+
+    // FRONT SIDE STYLINGfront 
+    &__picture{
+        height: 15rem;
+        background-size: cover;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        background-blend-mode: screen;
+
+        &--1{
+            background-image:linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url('../imgs/nat-5.jpg');
+        }
+
+        
+        &--2{
+            background-image:linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url('../imgs/nat-6.jpg');
+        }
+
+        
+        &--3{
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url('../imgs/nat-7.jpg');
+        }
+    }
+
+    &__heading{
+      width: 60%;
+      position: absolute;
+      top: 10rem;
+      right: 1rem;
+
+      font-size: 1.6rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-align: right;
+      color: $color-white;
+      letter-spacing: .1rem;
+    }  
+
+    &__heading--span{
+        padding:.4rem .6rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+
+        &-1{
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8));
+        }
+
+        &-2{
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .8), rgba($color-secondary-dark, .8));
+        }
+
+        &-3{
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8));
+        }
+    }
+
+    &__details{  
+      padding:1.4rem 2.6rem;
+      list-style: none;
+      text-align: center;
+
+      li{ 
+          padding: .6rem 0;
+      }
+
+      li:not(:last-child){
+        border-bottom: 1px solid #eee;
+      }
+    }
+
+    // BACK SIDE STYLING
+    
+    &__price{
+       margin-top: 5rem;
+       text-align: center;
+       color: $color-white;
+       
+       &--only{
+           text-transform: uppercase;
+        }
+        
+        &--value{
+            margin-top: 1rem;
+            font-size: 4rem; 
+            font-weight: 200;
+       }
+     } 
+
+     &__booking{
+        margin-top: 5rem; 
+     }
+} 
+
+

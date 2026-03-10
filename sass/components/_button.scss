@@ -1,0 +1,98 @@
+.btn {
+    position: relative;
+
+    &:hover {
+        transform: translateY(-3px);
+        -webkit-transform: translateY(-3px);
+        -moz-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+        -o-transform: translateY(-3px);
+    
+        box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2);
+    }
+    
+    &:hover::after {
+        animation: scaleAndFade .5s ease-in-out;
+        -webkit-animation: scaleAndFade .5s ease-in-out;
+    }
+
+    &,
+    &:link,
+    &:visited {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: fit-content;
+        transition: .2s;
+
+        // style the button itself
+        border:none; 
+        cursor: pointer;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        -webkit-transform: translateY(-1px);
+        -moz-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+        -o-transform: translateY(-1px);
+    
+        box-shadow: 0 .3rem 2rem rgba($color-black, 0.2);
+    }
+    
+    &--white {
+     @include button-style($color-white, $color-text);
+    }
+    
+    &--green{
+        @include button-style($color-primary-light, $color-white);
+    }
+
+    &--animated {
+        animation: moveInBottom .7s ease-in-out .2s backwards;
+        -webkit-animation: moveInBottom .7s ease-in-out .2s backwards;
+    }
+}
+
+.btn-text{
+    &:link, 
+    &:visited{
+      display: inline-block;
+      text-decoration: none;
+      color:$color-primary-dark;
+      border-bottom: 1px solid $color-primary-dark;
+      padding: 3px;
+      font-weight: 600;
+
+      position: relative;
+
+      transition: .3s;
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -ms-transition: .3s;
+      -o-transition: .3s;
+    }
+    
+    &:hover{
+        background-color: $color-primary-dark;
+        color:$color-white;
+        box-shadow: 1rem .5rem 2rem rgba($color-black, .2);
+
+        transform: translateY(-1px);
+        -webkit-transform: translateY(-1px);
+        -moz-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+        -o-transform: translateY(-1px);
+    }
+
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+    }
+}
+
+
